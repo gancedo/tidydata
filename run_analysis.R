@@ -1,7 +1,5 @@
 
 
-# http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html
-
 # Type this to clear your workspace.
 # rm(list=ls())
 
@@ -123,7 +121,6 @@ colnames(wdata) <- dcolnames
 # Step 5
 # create a tidy data set with the average 
 # of each variable for each activity and each subject.
-
 wmeandata <- wdata %>%
       group_by(subject, activity) %>%
             summarise_each(funs(mean))
