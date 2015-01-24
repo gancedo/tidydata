@@ -1,7 +1,15 @@
+# Script to process the 'UCI HAR Dataset'
+# (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+# according to the instructions of the Project
+# for the course 'Getting and Cleaning Data' (Coursera)
 
 
 # Type this to clear your workspace.
 # rm(list=ls())
+
+# Uncomment for installing the packages, if necessary
+# install.packages(dplyr)
+# install.packages(reshape2)
 
 # Load the necessary libraries.
 library(dplyr)
@@ -88,8 +96,8 @@ rm(obs_test_data, obs_train_data, subj_test_data, subj_train_data)
 # Step 3
 # Use descriptive activity names to name the activities in the data set.
 wdata$activity[wdata$activity=="1"] <- "walking"
-wdata$activity[wdata$activity=="2"] <- "walking.up"
-wdata$activity[wdata$activity=="3"] <- "walking.down"
+wdata$activity[wdata$activity=="2"] <- "walking.upstairs"
+wdata$activity[wdata$activity=="3"] <- "walking.downstairs"
 wdata$activity[wdata$activity=="4"] <- "sitting"
 wdata$activity[wdata$activity=="5"] <- "standing"
 wdata$activity[wdata$activity=="6"] <- "laying"
@@ -121,6 +129,7 @@ colnames(wdata) <- dcolnames
 # Step 5
 # create a tidy data set with the average 
 # of each variable for each activity and each subject.
+
 wmeandata <- wdata %>%
       group_by(subject, activity) %>%
             summarise_each(funs(mean))
