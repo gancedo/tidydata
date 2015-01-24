@@ -25,12 +25,7 @@ The script does not contain instructions for installing the 'dplyr' and 'reshape
 install.packages(dplyr)
 install.packages(reshape2)
 ```
-**Note:** The 'reshape2' package is only needed to create the long form of the tidy dataset. If you do not want to install this package, remove or comment these two last lines of the script:
-```{r}
-lmeandata <- melt(wmeandata, id=c("subject", "activity"))
-write.table(lmeandata, "tidy_data_l.txt", append = FALSE, sep="\t", row.names=FALSE, col.names = TRUE )
-```
-It might also be advisable to clear the variables in the working space.
+It might also be advisable to clear the variables in the working space before running the script.
 ```{r}
  rm(list=ls())
  ```
@@ -58,21 +53,21 @@ Use descriptive activity names to name the activities in the data set (**Step 3*
 
 Appropriately label the data set with descriptive variable names (**Step 4**).
 * Save column names into a new variable and modify there.
-* Correct 'fBodyBody' in names, which is a mistake, remove parenthesis, separate elements in the name by dots and change to lower case. 
+* Correct 'fBodyBody' in names, which is a mistake.
+* Apply dot-separated words coding style to the the column/variable names: remove parenthesis, separate elements in the name by dots and convert all characters to lower case. (The names should be already explicit enough for an expert in the field.)
 
 Apply the formatted column names to the original dataset.
 
 Create a tidy data set with the average of each variable for each activity and each subject (**Step 5**).
 
-The resulting tidy dataset will be in the **wide form**. Write the data frame to a text file. There is also an extra instruction to transmform it into the **long form** and write that to a different text file.
+The resulting tidy dataset will be in the **wide form**. Write the data frame to a text file. There is also an extra instruction to transmform it into the **long form** and write that to a different text file. 
 
 ## Output
 The output are two tidy text files: 
 * tidy\_data\_w.txt, wide format, and
-* tidy\_data\_l.txt, long format.
+* tidy\_data\_l.txt, long format --this is the one that was submitted for review.
 
 They can be read back into R using data.table to create a data table for inspection or further analysis:
 ```{r}
 tidydataw <- data.table("tidy_data_w.txt")
 tidydatal <- data.table("tidy_data_l.txt") 
-```
