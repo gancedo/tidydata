@@ -12,7 +12,7 @@ subject  | Identifier of the subject who carried out the experiment. | 1 to 30.
 activity | Activity performed by the subject during the experiment. | walking, walking.up, walking.down, sitting, standing, laying
 
 
-The third column can be any of the variables below, while the value corrresponds to the mean of all the measurements for the variable, grouped by subject and activity. The range of the values is always [-1,1].
+The third column can be any of the variables below, while the value corrresponds to the mean of all the measurements for the variable, grouped by subject and activity. The measurements in the original dataset were normalized and bounded within [-1,1] so the range of the value here is always [-1,1] with no units.
 
 Variable	|	Description 
 ------------	|	------------ 
