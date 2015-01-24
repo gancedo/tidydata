@@ -1,5 +1,5 @@
 # Codebook
-This Codebook describes the structure and variables of the long-form tidy dataset, as requested for the Course Project in 'Getting and cleaning data'. The full description of instructions to run the script that produces this dataset is given in the [README.md] (https://github.com/gancedo/tidydata/blob/master/README.md) file in this same repository.
+This Codebook describes the structure and variables of the tidy dataset, as requested for the Course Project in 'Getting and cleaning data'. The full description of instructions to run the script that produces this dataset is given in the [README.md] (https://github.com/gancedo/tidydata/blob/master/README.md) file in this same repository.
 
 Each observation (row) in the tidy dataset, consists of the following four columns:
 * subject
